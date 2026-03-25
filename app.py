@@ -6,7 +6,6 @@ from logic_utils import check_guess, get_range_for_difficulty, parse_guess, upda
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
 st.title("🎮 Game Glitch Investigator")
-st.caption("An AI-generated guessing game. Something is off.")
 
 st.sidebar.header("Settings")
 
@@ -50,13 +49,6 @@ st.info(
     f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
-
-with st.expander("Developer Debug Info"):
-    st.write("Secret:", st.session_state.secret)
-    st.write("Attempts:", st.session_state.attempts)
-    st.write("Score:", st.session_state.score)
-    st.write("Difficulty:", difficulty)
-    st.write("History:", st.session_state.history)
 
 raw_guess = st.text_input(
     "Enter your guess:",
@@ -127,5 +119,4 @@ if submit:
                 f"Score: {st.session_state.score}"
             )
 
-st.divider()
-st.caption("Built by an AI that claims this code is production-ready.")
+
